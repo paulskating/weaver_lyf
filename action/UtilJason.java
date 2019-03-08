@@ -76,7 +76,6 @@ public class UtilJason extends ToolUtil {
     public String buildMD5Sign(String appKey, String password, String timestamp) {
         String result = "";
 
-        HashMap<String, String> params = new HashMap<String, String>();
         StringBuffer sb = new StringBuffer();
         sb.append(appKey);
         sb.append(timestamp);
@@ -92,14 +91,13 @@ public class UtilJason extends ToolUtil {
     }
 
 
-    public String buildExecuteParams(String appKey, String password, String timestamp, HashMap params){
+    public String buildExecuteParams(String appKey, String timestamp, String sipSign, HashMap params){
         String result = "";
         JSONArray jsonArray = new JSONArray();
         jsonArray.put(params);
         HashMap<String, String> content = new HashMap<String, String>();
         content.put("transactions", jsonArray.toString());
         String transaction = content.toString();
-        String sipSign = buildMD5Sign(appKey,password,timestamp);
         result = transaction.substring(1, transaction.length()-1)+ "&sip_appkey="+appKey+"&sip_timestamp=" + timestamp + "&sip_sign="
                 + sipSign + "";
         return result;

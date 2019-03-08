@@ -22,6 +22,7 @@ import java.sql.ResultSet;
 public class SynErpData extends BaseCronJob {
 
     ToolUtil toolUtil=new ToolUtil();
+
     public void execute(){
         toolUtil.writeLog("SynERPData=========================Begin");
         updateProvinces();

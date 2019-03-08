@@ -8,6 +8,10 @@ import weaver.soa.workflow.request.RequestInfo;
 import weaver.workflow.request.RequestManager;
 import weaver.zwl.common.ToolUtil;
 
+/**
+ * Created by minjie on 2019/3/7.
+ */
+
 public class StoreOpenToERPAction extends ToolUtil implements Action{
     @Override
     public String execute(RequestInfo requestInfo) {
