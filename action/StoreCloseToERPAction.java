@@ -65,7 +65,7 @@ public class StoreCloseToERPAction extends ToolUtil implements Action {
             params.put("columns", columns);
             HashMap<String, String> conditions = new HashMap<String, String>();
             conditions.put("column", "CODE");
-//            conditions.put("condition","="+itcode);
+//            conditions.put("condition","%3D"+itcode);
             conditions.put("condition", "%3D"+"123");
             params.put("params", conditions);
 
